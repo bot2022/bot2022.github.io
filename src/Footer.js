@@ -6,17 +6,17 @@ const Footer = ({ page, ...otherProps }) => {
     <footer className="footer" style={{
       backgroundColor: '#000e54',
       color: 'white',
-      position: page === 'Home' ? 'fixed' : 'relative',
+      // position: page === 'Home' ? 'fixed' : 'relative',
       left: 0,
       bottom: 0,
-      width: '100%',
+      width: '100wh',
       padding: '1rem',
       textAlign: 'center',
     }}>
       <div className="container">
         <div className="content has-text-centered">
           <Typography variant='body2'>
-            Presented by <strong>Syracuse University Orange Robotics</strong>. The source code is hosted on GitHub.
+            Presented by <strong>Syracuse University Orange Robotics</strong>. Hosted on GitHub.
           </Typography>
           <Typography variant='body2'>
             Contact us through <a href="mailto:suorangerobotics@gmail.com"
