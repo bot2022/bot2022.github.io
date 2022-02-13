@@ -101,7 +101,7 @@ function App() {
 
         <div className="App"
           style={{
-            backgroundColor: "#ADD8E6",
+            backgroundColor: "#F0FFFF",
             height: "100%"
           }}  
         >
