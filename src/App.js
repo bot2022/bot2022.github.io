@@ -40,7 +40,7 @@ const renderContent = (page, setPage) => {
         <Container maxWidth="md"
           style={{
             height: "85vh",
-            paddingTop: "10rem",
+            paddingTop: "20vh",
           }}
         >
           
