@@ -6,14 +6,14 @@ import Team from './Team';
 import Robot from './Robot';
 import Apply from './Apply';
 import { Button, Container, Link, Typography } from '@mui/material';
-import { createTheme, ThemeProvider, styled } from '@mui/material/styles';
+import { createTheme, ThemeProvider, styled, responsiveFontSizes} from '@mui/material/styles';
 
 import * as ReactDOM from "react-dom";
 import { BrowserRouter, HashRouter, Route, Routes } from "react-router-dom";
 
 import robotImage from "./images/2022body.png";
 
-const theme = createTheme({
+var theme = createTheme({
   palette: {
     primary: {
       main: '#000e54',
@@ -24,21 +24,36 @@ const theme = createTheme({
   },
 });
 
+theme = responsiveFontSizes(theme);
+
 const renderContent = (page, setPage) => {
   if (page === 'Home') {
     return (
-      <div>
-        <Container maxWidth="md">
+      <div style={{
+        height: "100%",
+        backgroundImage: `url(${robotImage})`,
+        backgroundRepeat: 'no-repeat',
+        backgroundSize: 'cover',
+        overflow: "true",
+        backgroundPosition: "center",
+      }}>
+        <Container maxWidth="md"
+          style={{
+            height: "85vh",
+            paddingTop: "10rem",
+          }}
+        >
           
-          <Typography variant="h3"
+          <Typography variant="h1"
             sx={
               {
-                color: '#000e54',
+                // color: 'white',
                 textAlign: 'center',
                 marginTop: '1rem',
                 marginBottom: '1rem',
               }
             }
+            color="primary"
           >
             Syracuse University Orange Robotics
           </Typography>
@@ -46,16 +61,24 @@ const renderContent = (page, setPage) => {
             
             
           </Typography>
-          <Button size="large"
+          <Button 
+            size="large"
+            variant='outlined'
             onClick={() => setPage('Apply')}
+            // style={{
+            //   color: 'white',
+            // }}
           >We are recruiting! Apply Here!</Button>
   
           
           
         </Container>
-        <img src={robotImage} alt="Robot"
-          width={"100%"}
-        />
+        {/* <img src={robotImage} alt="Robot"
+          style={{
+            height: '100%',
+            alignSelf: 'center',
+          }}
+        /> */}
       </div>
       
     )

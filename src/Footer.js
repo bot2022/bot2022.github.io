@@ -1,3 +1,4 @@
+import { Typography } from '@mui/material';
 import * as React from 'react';
 
 const Footer = ({ page, ...otherProps }) => {
@@ -9,15 +10,15 @@ const Footer = ({ page, ...otherProps }) => {
       left: 0,
       bottom: 0,
       width: '100%',
-      padding: '0.5rem',
+      padding: '1rem',
       textAlign: 'center',
     }}>
       <div className="container">
         <div className="content has-text-centered">
-          <p>
+          <Typography variant='body2'>
             Presented by <strong>Syracuse University Orange Robotics</strong>. The source code is hosted on GitHub.
-          </p>
-          <p>
+          </Typography>
+          <Typography variant='body2'>
             Contact us through <a href="mailto:suorangerobotics@gmail.com"
               style={{
                 color: 'white',
@@ -25,7 +26,7 @@ const Footer = ({ page, ...otherProps }) => {
             >
               suorangerobotics@gmail.com
             </a>
-          </p>
+          </Typography>
         </div>
       </div>
     </footer>

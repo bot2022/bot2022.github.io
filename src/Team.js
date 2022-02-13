@@ -40,17 +40,13 @@ const MemberCard = ({ member }) => {
 
 const team = [
   {
-    name: "Amia D",
+    name: "Amia Diakite",
     position: "President",
     subteam: "Software",
   }, {
     name: "Alexandar Callo",
     position: "Mechanical Lead",
     subteam: "Mechanical",
-  }, {
-    name: "Zhuowei Zhang",
-    position: "Vice President",
-    subteam: "Software",
   }, {
     name: "Arnaud Buard",
     position: "Software",
@@ -63,7 +59,11 @@ const team = [
     name: "Kaifeng Chen",
     position: "Mechanical",
     subteam: "Mechanical",
-  }
+  }, {
+    name: "Zhuowei Zhang",
+    position: "Vice President",
+    subteam: "Software",
+  }, 
 
 
 ]
