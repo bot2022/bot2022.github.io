@@ -1,5 +1,5 @@
 
-import { Grid, Link } from '@mui/material';
+import { Grid, Link, Container } from '@mui/material';
 import * as React from 'react';
 
 import Card from '@mui/material/Card';
@@ -11,17 +11,19 @@ import Typography from '@mui/material/Typography';
 
 const MemberCard = ({ member }) => {
   return (
-    <Card sx={{
+    <Card
+      elevation={0}
+    sx={{
       width: '100%',
     }}>
-      <CardMedia
+      {/* <CardMedia
         component="img"
         height="140"
         image="/static/images/cards/idk.jpg"
         alt="Profile Picture"
-      />
+      /> */}
       <CardContent>
-        <Typography gutterBottom variant="h5" component="div">
+        <Typography gutterBottom variant="h6" component="div">
           {member.name}
         </Typography>
         <Typography variant="body2" color="text.secondary">
@@ -42,23 +44,23 @@ const team = [
     position: "President",
     subteam: "Software",
   }, {
-    name: "Alex C",
+    name: "Alexandar Callo",
     position: "Mechanical Lead",
     subteam: "Mechanical",
   }, {
-    name: "Zhuowei Z",
+    name: "Zhuowei Zhang",
     position: "Vice President",
     subteam: "Software",
   }, {
-    name: "Arnaud A",
+    name: "Arnaud Buard",
     position: "Software",
     subteam: "Software",
   }, {
-    name: "Bai",
+    name: "Bei Luo",
     position: "Mechanical",
     subteam: "Mechanical",
   }, {
-    name: "Kaifeng",
+    name: "Kaifeng Chen",
     position: "Mechanical",
     subteam: "Mechanical",
   }
@@ -69,7 +71,7 @@ const team = [
 function Team() {
 
   return (
-    <div>
+    <Container maxWidth="md">
       <h1>Our Team</h1>
       <p>
         In the 2022 season, the Orange Robotics team will be competing at RoboNation's 
@@ -93,7 +95,7 @@ function Team() {
                 justifyContent: 'center',
                 alignItems: 'center',
                 flexDirection: 'column',
-                p: 3,
+                p: 2,
                 mb: 3,
                 width: '280px',
               }}
@@ -103,7 +105,7 @@ function Team() {
           ))
         }
       </Grid>
-    </div>
+    </Container>
   )
 }
 

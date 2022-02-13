@@ -38,7 +38,7 @@ const ResponsiveAppBar = (props) => {
 
   return (
     <AppBar style={{
-      backgroundColor: '#000e54',
+      backgroundColor: 'white',
       boxShadow: 'none',
     }} position="static"
     >
@@ -46,6 +46,7 @@ const ResponsiveAppBar = (props) => {
         <Toolbar disableGutters>
           <IconButton
             onClick={() => props.setPage('Home')}
+            // href={'Home'}
           >
           <img
             style={{
@@ -91,16 +92,26 @@ const ResponsiveAppBar = (props) => {
                 <MenuItem key={page} onClick={handleCloseNavMenu}>
                   <Typography textAlign="center"
                     onClick={() => props.setPage(page)}
+                    // href={page === 'Home' ? '/Home/' : `/Home/${page}`}
                   >{page}</Typography>
                 </MenuItem>
               ))}
             </Menu>
           </Box>
           <Box sx={{ flexGrow: 1, display: { md: 'flex' } }}>
-            <Typography variant="h6" color="inherit" noWrap
+            <Typography variant="h6" noWrap
               onClick={() => props.setPage('Home')}
             >
+              <a 
+                // href={'/Home/'}
+                style={{
+                  textDecoration: 'none',
+                  color: '#000e54',
+                }}
+              >
               Orange Robtics
+              </a>
+              
             </Typography>
           </Box>
 
@@ -110,8 +121,9 @@ const ResponsiveAppBar = (props) => {
                 variant='outlined'
                 key={page}
                 onClick={handleCloseNavMenu}
-                sx={{ my: 2, color: 'white', display: 'block' }}
+                sx={{ my: 2, display: 'block' }}
                 onClick={() => props.setPage(page)}
+                // href={page === 'Home' ? '/Home/' : `/Home/${page}`}
                 style={{
                   margin: '0px 10px',
                 }}

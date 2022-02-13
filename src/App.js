@@ -5,26 +5,59 @@ import Footer from './Footer';
 import Team from './Team';
 import Robot from './Robot';
 import Apply from './Apply';
-import { Container } from '@mui/material';
+import { Button, Container, Link, Typography } from '@mui/material';
+import { createTheme, ThemeProvider, styled } from '@mui/material/styles';
 
-const renderContent = (page) => {
+import * as ReactDOM from "react-dom";
+import { BrowserRouter, HashRouter, Route, Routes } from "react-router-dom";
+
+import robotImage from "./images/2022body.png";
+
+const theme = createTheme({
+  palette: {
+    primary: {
+      main: '#000e54',
+    },
+    secondary: {
+      main: '#ff4081',
+    },
+  },
+});
+
+const renderContent = (page, setPage) => {
   if (page === 'Home') {
     return (
       <div>
-        <h1>Orange Robotics</h1>
-        <h3>We are recruiting!</h3>
-        <p>
-          This is a simple hero unit, a simple jumbotron-style component for calling
-          extra attention to featured content or information.
-        </p>
-        <p>
-
-        </p>
-
-        <div>
-
-        </div>
+        <Container maxWidth="md">
+          
+          <Typography variant="h3"
+            sx={
+              {
+                color: '#000e54',
+                textAlign: 'center',
+                marginTop: '1rem',
+                marginBottom: '1rem',
+              }
+            }
+          >
+            Syracuse University Orange Robotics
+          </Typography>
+          <Typography variant="h5">
+            
+            
+          </Typography>
+          <Button size="large"
+            onClick={() => setPage('Apply')}
+          >We are recruiting! Apply Here!</Button>
+  
+          
+          
+        </Container>
+        <img src={robotImage} alt="Robot"
+          width={"100%"}
+        />
       </div>
+      
     )
   } else if (page === 'Team') {
     return <Team />
@@ -39,22 +72,37 @@ function App() {
   const [page, setPage] = React.useState('Home');
 
   return (
-    <div className="App">
-      <ResponsiveAppBar
-        page={page}
-        setPage={setPage}
-      />
-      <Container maxWidth="md">
-        
-        
-        {
-          renderContent(page)
-        }
+    
+    <ThemeProvider theme={theme}>
+      <BrowserRouter> 
 
-       
-      </Container>
-      <Footer page={page}/>
-    </div>
+        <div className="App"
+          style={{
+            backgroundColor: "#ADD8E6",
+            height: "100%"
+          }}  
+        >
+          <ResponsiveAppBar
+            page={page}
+            setPage={setPage}
+          />
+            {renderContent(page, setPage)}
+          
+            {/* <Routes>
+              <Route path="/" element={renderContent("Home")} />
+              <Route path="/Home" element={renderContent("Home")} />
+              <Route path="/Home/Team" element={renderContent("Team")} />
+              <Route path="/Home/Robot" element={renderContent("Robot")} />
+              <Route path="/Home/Apply" element={renderContent("Apply")} />
+            </Routes> */}
+
+          
+          <Footer page={page}/>
+        </div>
+      </BrowserRouter>
+
+    </ThemeProvider>
+    
   );
 }
 

@@ -1,12 +1,14 @@
-import { Button } from "@mui/material";
+import { Button, Container } from "@mui/material";
 import * as React from "react";
 
 
 function Apply() {
   return (
-    <div style={{
-      marginBottom: '20px',
-    }}>
+    <Container maxWidth="md"
+      sx={{
+        marginBottom: "20px",
+      }}
+    >
       <h1>Apply</h1>
 
       <p>
@@ -15,7 +17,7 @@ function Apply() {
 
       <Button>Interest Form</Button>
 
-    </div>
+    </Container>
   )
 }
 
